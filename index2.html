@@ -10,6 +10,17 @@
     <script>
       function handleCredentialResponse(response) {
         // console.log("handleCredentialResponse", response);
+        // Get the access token and make the API request
+        var user = auth2.currentUser.get();
+        var accessToken = user.getAuthResponse().access_token;
+        console.log("accessToken", accessToken);
+        //get player details from play games api
+        var xhr = new XMLHttpRequest();
+        xhr.open(
+          "GET",
+          "https://www.googleapis.com/games/v1/players/me?access_token=" +
+            accessToken
+        );
       }
     </script>
   </body>
