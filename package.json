@@ -1,0 +1,29 @@
+{
+  "name": "play-games-oauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "game copy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "google-api-auth": "ts-node google-api-auth.ts",
+    "games": "ts-node games.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lil-shake-code/play-games-oauth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lil-shake-code/play-games-oauth/issues"
+  },
+  "homepage": "https://github.com/lil-shake-code/play-games-oauth#readme",
+  "dependencies": {
+    "@types/node": "^20.1.2",
+    "@types/yargs": "^17.0.24",
+    "googleapis": "^118.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "yargs": "^17.7.2"
+  }
+}
