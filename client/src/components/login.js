@@ -23,22 +23,22 @@ function Login() {
         console.log(error);
       });
 
-    gapi.client
-      .request({
-        path: "https://www.googleapis.com/games/v1/players/me",
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + accessToken,
-        },
-      })
-      .then(
-        function (response) {
-          console.log(response.result);
-        },
-        function (reason) {
-          console.error("Error: " + reason.result.error.message);
-        }
-      );
+    // gapi.client
+    //   .request({
+    //     path: "https://www.googleapis.com/games/v1/players/me",
+    //     method: "GET",
+    //     headers: {
+    //       Authorization: "Bearer " + accessToken,
+    //     },
+    //   })
+    //   .then(
+    //     function (response) {
+    //       console.log(response.result);
+    //     },
+    //     function (reason) {
+    //       console.error("Error: " + reason.result.error.message);
+    //     }
+    //   );
   };
   const onFailure = (res) => {
     console.log("[Login failed] res:", res);
