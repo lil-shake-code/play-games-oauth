@@ -2,8 +2,9 @@ import { GoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
 import axios from "axios";
 const clientId =
-  "932160326621-vjcl3nd50k6ucgj8p5tflcjfomiqhg9e.apps.googleusercontent.com";
-const clientSecret = "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";
+  "366374972420-u9qn7d8j7r67dbr0ge9jag56u7s6dnvg.apps.googleusercontent.com";
+const clientSecret = "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";
+
 function Login() {
   const onSuccess = (res) => {
     console.log("[Login Success] currentUser:", res.profileObj);
