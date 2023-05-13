@@ -10,35 +10,22 @@ function Login() {
     var accessToken = gapi.auth.getToken().access_token;
     //get player info from google play games
     // make a get request with the access token
-    axios
-      .get("https://www.googleapis.com/games/v1/players/me", {
+    gapi.client
+      .request({
+        path: "https://www.googleapis.com/games/v1/players/me",
+        method: "GET",
         headers: {
           Authorization: "Bearer " + accessToken,
         },
       })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    // gapi.client
-    //   .request({
-    //     path: "https://www.googleapis.com/games/v1/players/me",
-    //     method: "GET",
-    //     headers: {
-    //       Authorization: "Bearer " + accessToken,
-    //     },
-    //   })
-    //   .then(
-    //     function (response) {
-    //       console.log(response.result);
-    //     },
-    //     function (reason) {
-    //       console.error("Error: " + reason.result.error.message);
-    //     }
-    //   );
+      .then(
+        function (response) {
+          console.log(response.result);
+        },
+        function (reason) {
+          console.error("Error: " + reason.result.error.message);
+        }
+      );
   };
   const onFailure = (res) => {
     console.log("[Login failed] res:", res);
